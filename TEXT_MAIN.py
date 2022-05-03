@@ -1,5 +1,6 @@
 from sys import exit
 
+
 inventory = []
 
 def welcome():
@@ -11,8 +12,8 @@ def welcome():
     
 def sign():
     print("In front of you is a signpost")
-    print("west. Old Grove Forest")
-    print("east. Village")
+    print("east. Old Grove Forest")
+    print("west. Village")
     print("north. abandoned farm house")
     print("south. go back home.")
     print("Where would you like to go?")
@@ -59,10 +60,24 @@ def spider():
     print("run back. You attempt to mske your way to the fork in the forest road")
     print("fight. ypu fight the spiders")
     print("bribe.")
+    spider_armed = False
     
+    while True:
+        choice = input("> ")
+
+        if choice == "run foward":
+            death("The Spider webs you and takes you into the trees never to be seen again")
+        elif choice == "fight" and not spider_armed:
+            print("You take out your sword and fight")
+            print("you vanquished the Spider")
+            spider_armed = True
+            break
 
 
 
-
-
+def death(lose):
+    print(lose, "Your journey has ended hero")
+    exit(0)
+               
+             
 welcome()
