@@ -59,7 +59,17 @@ def spider():
     print("run back. You attempt to mske your way to the fork in the forest road")
     print("fight. ypu fight the spiders")
     print("bribe.")
+    spider_armed == False
     
+    while True:
+        choice = input("> ")
+
+        if choice == "run foward":
+            death("The Spider webs you and takes you into the trees never to be seen again")
+        elif choice == "fight" and not spider_armed:
+            print("You take out your sword and fight")
+            print("you vanquished the Spider")
+            spider_armed = True    
 
 
 
