@@ -6,7 +6,7 @@ class GameExit(Exception):
 def ask_user(*options):
     """Accept user input."""
     while True:
-        choice = input("> ").trim()
+        choice = input("> ")
         if choice in options:
             return choice
         else:
@@ -35,10 +35,10 @@ def sign(state):
             return forest, state
         case "west":
             print("You start walking west, in the distance you see a village")
-            return village, state
+            return #village, state
         case "north":
             print("You make your way towards and abandoned farm house")
-            return farm, state
+            return #farm, state
         case "south":
             raise GameExit("""Your cowardice has allowed evil to spread.\nYou look foward to a life time of work in the mines,as civiliztion falls around you""")
 
@@ -74,7 +74,7 @@ def spider(state):
         print("You take out your sword and fight")
         print("you vanquished the Spider")
         state["spider armed"] = True
-        return XXX, state
+        return #XXX, state
     else:
         raise GameExit("XXX")
 
